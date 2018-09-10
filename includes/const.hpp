@@ -7,6 +7,5 @@
 # define MUSIC_DIR RSC_DIR"musics/"
 
 # define DFT_MUSIC MUSIC_DIR"cavern.ogg"
-# define DFT_RINGT MUSIC_DIR"ringtone.ogg"
 
 #endif //!CONST_HPP_
