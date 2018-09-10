@@ -2,6 +2,7 @@
 # define ART3MIS_HPP_
 
 # include <iostream>
+# include <string>
 # include <vector>
 
 # include <SFML/Window.hpp>
@@ -19,6 +20,9 @@ public:
 	virtual ~Art3mis();
 
 	virtual bool init(int ac, char ** av);
+
+public:
+	static constexpr std::string WIN_NAME;
 };
 
 #endif // !ART3MIS_HPP_

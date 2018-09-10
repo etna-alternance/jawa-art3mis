@@ -1,8 +1,8 @@
-#include "CodCodeCodec.hpp"
+#include "Art3mis.hpp"
 
 int main(int ac, char ** av)
 {
-  CodCodeCodec codec;
+  Art3mis codec;
 
   if (codec.init(ac, av) == false)
     return 1;
