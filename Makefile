@@ -20,8 +20,6 @@ LIB			= $(LIBSFML) $(LIBMYSF)
 SRC_DIR		= ./sources
 SRC			= \
 			$(SRC_DIR)/main.cpp \
-			$(SRC_DIR)/ACsvParser.cpp \
-			$(SRC_DIR)/Dialogue.cpp \
 			$(SRC_DIR)/Art3mis.cpp \
 			$(SRC_DIR)/CodecRender.cpp \
 			$(SRC_DIR)/SpriteNode.cpp \
