@@ -1,6 +1,8 @@
 #ifndef TEXTBOX_HPP_
 # define TEXTBOX_HPP_
 
+# include <fstream>
+
 # include "SceneNode.hpp"
 # include "ResourceHolder.hpp"
 # include "Resource.hpp"
@@ -14,7 +16,7 @@ public:
 	virtual ~TextBox();
 
 	bool init(const mysf::FontHolder & fhl);
-	void setFilename(const std::string & filename);
+	bool setFilename(const std::string & filename);
 	bool isOver() const;
 
 	void setSize(float width, float height);
@@ -32,11 +34,15 @@ private:
 	unsigned int _stringTextW(const std::string & str) const;
 
 private:
+	std::ifstream _file;
+	std::string _quote;
 	sf::Time _letterTime;
 	bool _over;
 
 	sf::Vector2f _size;
 	sf::Text _text;
+
+	static constexpr unsigned int _characterSize = 12;
 };
 
 #endif // !TEXTBOX_HPP_

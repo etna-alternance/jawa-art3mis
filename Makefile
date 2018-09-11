@@ -10,7 +10,7 @@ LDFLAGS		+= $(LIB)
 ## PROJECT
 ##
 
-NAME 		= cod_code_codec
+NAME 		= art3mis
 RM			= rm -f
 
 LIBSFML		= -L /usr/local/lib -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system

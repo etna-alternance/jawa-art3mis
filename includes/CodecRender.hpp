@@ -31,7 +31,6 @@ private:
 	bool initMusic();
 	bool initNodes();
 	bool initTalker();
-	void setupLoading(float percent);
 	void setupLoaded();
 
 protected:
@@ -40,13 +39,18 @@ protected:
 	mysf::SoundBufferHolder _shl;
 
 private:
+	const sf::Vector2f _scale;
+
+	SpriteNode _background;
+
+	mysf::SceneNode _middleground;
+	mysf::AnimNode _talker;
+
+	mysf::SceneNode _frontground;
+	TextBox _textBox;
+
 	const std::string _bgmusic;
 	sf::Music _music;
-
-	const sf::Vector2f _scale;
-	mysf::SceneNode _middleground;
-	TextBox _textBox;
-	mysf::AnimNode _talker;
 
 	static constexpr float _musicVolume = 100.f;
 	static const sf::Vector2u _spriteSize;

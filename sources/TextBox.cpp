@@ -14,18 +14,15 @@ TextBox::~TextBox()
 
 bool TextBox::init(const mysf::FontHolder & fhl)
 {
-	if (_dialogue.parse() == false)
-		return false;
-	if (_dialogue.empty() == false)
-		_currQuote = _dialogue.front();
-	_text.setFont(fhl[Resource::Font::Ayar]);
-	_text.setCharacterSize(11);
+	_text.setFont(fhl[Resource::Font::Orbitron]);
+	_text.setCharacterSize(_characterSize);
 	return true;
 }
 
-void TextBox::setFilename(const std::string & filename)
+bool TextBox::setFilename(const std::string & filename)
 {
-	_dialogue.setFilename(filename);
+	_file.open(filename.c_str());
+	return _file.is_open();
 }
 
 bool TextBox::isOver() const
@@ -56,24 +53,20 @@ void TextBox::updateCurrent(const sf::Time & deltaTime, const mysf::Event &)
 
 	timer += deltaTime;
 	if (timer >= quoteTime)
-    {
+	{
 		timer -= quoteTime;
-		if (_dialogue.empty() == false)
-    	{
-			if (_currQuote.index != _dialogue.front().index || _currQuote.talker != _dialogue.front().talker)
-				_talkerChanged = true;
-			_currQuote = _dialogue.front();
-			_dialogue.pop();
+		if (std::getline(_file, _quote))
+		{
 			_updateText();
-			quoteTime = _letterTime * static_cast<sf::Int64>(_currQuote.quote.size());
+			quoteTime = _letterTime * static_cast<sf::Int64>(_quote.size());
 			quoteTime += _letterTime * static_cast<sf::Int64>(10);
-    	}
+		}
 		else
 		{
 			quoteTime = sf::Time::Zero;
 			_over = true;
-    	}
-    }
+		}
+	}
 }
 
 void TextBox::drawCurrent(sf::RenderTarget & target, sf::RenderStates states) const
@@ -83,15 +76,15 @@ void TextBox::drawCurrent(sf::RenderTarget & target, sf::RenderStates states) co
 
 void TextBox::_updateText()
 {
-	std::string cut(_currQuote.quote);
+	std::string cut(_quote);
 	unsigned int count = 0;
 	int ret = 0;
 
 	while ((ret = _whereToCut(cut, ret)) != -1)
-    {
+	{
 		cut[ret] = '\n';
 		++count;
-    }
+	}
 	_text.setString(cut);
 	_centerText(!count);
 }
@@ -99,17 +92,17 @@ void TextBox::_updateText()
 void TextBox::_centerText(bool isCenter)
 {
 	if (isCenter)
-    {
+	{
 		const sf::FloatRect rect(_text.getLocalBounds());
 
 		_text.setOrigin(rect.left + rect.width / 2.f, rect.top + rect.height / 2.f);
 		_text.setPosition(_size.x / 2.f, 0.f);
-    }
+	}
 	else
-    {
+	{
 		_text.setOrigin(0.f, 0.f);
 		_text.setPosition(0.f, 0.f);
-    }
+	}
 }
 
 int TextBox::_whereToCut(const std::string & str, unsigned int offset) const

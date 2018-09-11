@@ -21,8 +21,9 @@ public:
 
 	virtual bool init(int ac, char ** av);
 
-public:
-	static constexpr std::string WIN_NAME;
+private:
+	static const std::string _winName;
+	static const sf::Vector2f _winSize;
 };
 
 #endif // !ART3MIS_HPP_
