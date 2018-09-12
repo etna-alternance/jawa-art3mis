@@ -9,7 +9,7 @@
 # define DFT_MUSIC MUSIC_DIR"subdivisions.ogg"
 
 # define WIN_NAME "Codec - Art3mis"
-# define WIN_SIZE_X (596)
-# define WIN_SIZE_Y (203)
+# define WIN_SIZE_X (1440)
+# define WIN_SIZE_Y (900)
 
 #endif //!CONST_HPP_

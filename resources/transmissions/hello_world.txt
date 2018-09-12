@@ -1,2 +1,6 @@
-Hello World !
-My name is Art3mis and I'm here to help you through this pool !
+Hello you !
+My name is Linus Guilmore and I'm here to help you through this pool !
+
+Today, we need you for a special mission: the [name of the mission] mission.
+You will be called in groups during the day.
+Stand by to be ready!

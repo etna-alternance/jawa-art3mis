@@ -1,7 +1,7 @@
 #include "CodecRender.hpp"
 
 const sf::Vector2u CodecRender::_spriteSize = sf::Vector2u(112, 90);
-const sf::Vector2f CodecRender::_position   = sf::Vector2f(242, 109);
+const sf::Vector2f CodecRender::_position   = sf::Vector2f(540, 295);
 
 CodecRender::CodecRender(const std::string & filename, const std::string & bgmusic, const sf::Vector2f & scale)
 	: mysf::GraphicRender()
@@ -111,6 +111,7 @@ bool CodecRender::initTalker()
 {
 	_talker.setTexture(_thl[Resource::Texture::Talk]);
 	_talker.setPosition(_position.x, _position.y);
+	_talker.scale(3.5f, 3.5f);
 
 	for (unsigned int i = 0; i < _talker.getTexture()->getSize().x / _spriteSize.x; ++i)
 		_talker.addFrame(sf::IntRect(i * _spriteSize.x, 0, _spriteSize.x, _spriteSize.y));

@@ -16,6 +16,7 @@ bool TextBox::init(const mysf::FontHolder & fhl)
 {
 	_text.setFont(fhl[Resource::Font::Orbitron]);
 	_text.setCharacterSize(_characterSize);
+	_text.setFillColor(sf::Color::Green);
 	return true;
 }
 

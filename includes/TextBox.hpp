@@ -42,7 +42,7 @@ private:
 	sf::Vector2f _size;
 	sf::Text _text;
 
-	static constexpr unsigned int _characterSize = 12;
+	static constexpr unsigned int _characterSize = 40;
 };
 
 #endif // !TEXTBOX_HPP_
