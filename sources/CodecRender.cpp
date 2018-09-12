@@ -111,7 +111,7 @@ bool CodecRender::initTalker()
 {
 	_talker.setTexture(_thl[Resource::Texture::Talk]);
 	_talker.setPosition(_position.x, _position.y);
-	_talker.scale(3.5f, 3.5f);
+	_talker.scale(_scale);
 
 	for (unsigned int i = 0; i < _talker.getTexture()->getSize().x / _spriteSize.x; ++i)
 		_talker.addFrame(sf::IntRect(i * _spriteSize.x, 0, _spriteSize.x, _spriteSize.y));
