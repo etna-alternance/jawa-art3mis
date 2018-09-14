@@ -53,6 +53,7 @@ private:
 	sf::Music _music;
 
 	static constexpr float _musicVolume = 100.f;
+	static constexpr float _animFrameTime = 0.085f;
 	static const sf::Vector2u _spriteSize;
 	static const sf::Vector2f _position;
 };
