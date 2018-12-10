@@ -1,6 +1,5 @@
 # jawa-art3mis
-Codec version Ready Player One. Art3mis est le nom d'un des personages principale... Tin tin tin !
-jawa-art3mis is a `Ready Player One` code inspired from the `Metal Gear Solid 1` codec. Art3mis is the name of one of the main characters.
+jawa-art3mis is a `Ready Player One` codec inspired from the `Metal Gear Solid 1` codec. Art3mis is the name of one of the main characters.
 
 ---
 
